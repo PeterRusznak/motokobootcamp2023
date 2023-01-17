@@ -4,6 +4,7 @@ import Debug "mo:base/Debug";
 import Iter "mo:base/Iter";
 import Text "mo:base/Text";
 import Nat "mo:base/Nat";
+import Buffer "mo:base/Buffer";
 
 
 
@@ -69,19 +70,21 @@ public query func number_of_words(t : Text): async Nat {
 
 public query func find_duplicates(a : [Nat]) : async [Nat] {
 
-    var ret : [Nat] = [];
-    
+    var buffer = Buffer.Buffer<Nat>(1);    
+
     for(i in Iter.range(0, a.size()-1 )) {
 
         for(j in Iter.range(i+1, a.size()-1)){
 
-          if(a[i] == a[j]){
-             ret := Array.append<Nat>(ret, [a[j]]);
+          if(a[i] == a[j] and not Buffer.contains(buffer, a[i], Nat.equal)){          
+              buffer.add(a[j]);         
           };
 
         };
-    };
-    return ret
+    };   
+    
+    return Buffer.toArray(buffer);
+
 };
 
 
