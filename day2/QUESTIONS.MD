@@ -1,7 +1,8 @@
 1, The ledger canister is controlled by the Network Nervous System.
 
 
-2, No idea
+2, Subnet: pae4o-o6dxf-xki7q-ezclx-znyd6-fnk6w-vkv5z-5lfwh-xym2i-otrrw-fqe
+It currently has 16 node machines.
 
 
 3, No idea
