@@ -1,4 +1,4 @@
-1, At present, canisters are practically limited to 4 GB memory size. 
+1, One canister can store up to 48GB of data! Moreover this is a temporary limitation and the memory limitation is frequently uplifted. 
 
 2, Error. We try to assign a new value to an immutable variable. Code does not compile.
 
