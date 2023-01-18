@@ -21,17 +21,15 @@ actor {
     return sum / array.size();
   };
 
-
   public query func count_character(t : Text, c : Char) : async Nat {
     var counter :Nat = 0;
-
-    for (ch in t.chars()){
-     
-      if(Char.toText(ch) == Char.toText(c)){
-
-        counter += 1;
-      };
-    };
+    type Pattern = Text.Pattern;
+    let p : Pattern = #char(c);
+    for(letter in t.chars()) {
+        if(Text.contains(Char.toText(letter), p)){
+          counter := counter+1;
+        }
+    };    
     return counter; 
   };
 
